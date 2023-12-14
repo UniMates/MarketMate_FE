@@ -2,6 +2,7 @@ async function login() {
     // Get values from the form
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    var type = document.getElementById("type").value;
 
     // Replace this URL with the actual URL of your authentication endpoint
     var url = '';
@@ -12,7 +13,7 @@ async function login() {
         const users = await response.json();
 
         // Check if the provided username and password match any user in the database
-        const authenticatedUser = users.find(user => user.username === username && user.email === password);
+        const authenticatedUser = users.find(user => user.type === type && user.username === username && user.email === password);
 
         if (authenticatedUser) {
             document.getElementById("error-message").innerText = "Login successful!";
