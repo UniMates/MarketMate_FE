@@ -23,6 +23,7 @@ select {
     cursor:pointer;
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
  }
  select::-ms-expand {
     display: none;
@@ -36,6 +37,7 @@ select {
     background: white;
     overflow: hidden;
     border-radius: .25em;
+    font-weight: bold;
  }
  .select::after {
     content: '\25BC';
@@ -103,9 +105,12 @@ form .txt_field {
     text-align: center;
 }
 
-.login_button input {
-    background-color: #2691D9;
-    border-radius: 5px;
+.login_button button {
+    background-color: #5691b8;
+    border-radius: 3px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
 }
 
 .txt_field span::before {
