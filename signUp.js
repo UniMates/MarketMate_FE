@@ -12,7 +12,6 @@ function signUp() {
         userId: data.get('userId'),
         email: data.get('email'),
         password: data.get('password'),
-        confirmPassword: data.get('cPassword')
       };
   
       try {
