@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="loginStyle.css">
-    <script src="login.js" defer></script>
 </head>
 
 <body>
     <div class="center">
         <h1>Login</h1>
-        <form id = "loginForm" action="" method="post">
+        <form id = "loginForm">
             <div class="select">
-                <select name="type" id="type" name="type">
+                <select name="userRole" id="userRole">
                     <option selected disabled>Choose a user type</option>
                     <option value="admin">Admin</option>
                     <option value="cashier">Cashier</option>
                 </select>
             </div>
             <div class="txt_field">
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="userName" name="userName" required>
                 <span></span>
-                <label for="username">Username</label>
+                <label for="userName">Username</label>
             </div>
             <div class="txt_field">
                 <input type="password" id="password" name="password" required>
@@ -32,13 +31,14 @@
             </div>
             <div class="pass">Forgot Password?</div>
             <div class="login_button">
-                <button type="button" onclick="login()">Login</button>
+                <button>Login</button>
             </div>
             <div class="signUp_link">
                 Don't have an account? <a href="signUp.html">Sign Up</a>
             </div>
         </form>
     </div>
+    <script src="login.js"></script>
 </body>
 
 </html>

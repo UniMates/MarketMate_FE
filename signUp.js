@@ -1,38 +1,18 @@
-function signUp() {
-    const navigate = function(url) {
-      console.log('Navigating to:', url);
-    };
+document.getElementById("signUpForm").addEventListener("submit", signIn);
+
+async function signIn(event) {
+  var form1 = document.getElementById("signUpForm");
+  const data = new FormData(form1);
+  try {
+    const res = await fetch('http://192.168.61.30:8081/marketmate/user/signup', {
+      method: 'POST',
+      body: data
+    });
   
-    const handleSubmit = async function(e) {
-      e.preventDefault();
-      const data = new FormData(e.currentTarget);
-      const form = {
-        type: data.get('type'),
-        username: data.get('username'),
-        userId: data.get('userId'),
-        email: data.get('email'),
-        password: data.get('password'),
-      };
-  
-      try {
-        const res = await fetch('', {
-          method: 'POST',
-          body: JSON.stringify(form),
-          headers: {
-            'content-type': 'application/json',
-          },
-        });
-  
-        if (res.ok) {
-          console.log('Registration successful');
-          navigate('/');
-        } else {
-          console.error('Registration failed:', res.statusText);
-        }
-      } catch (error) {
-        // Handle errors during the fetch operation
-        console.error('Error during registration:', error);
-      }
-    };
+      alert(res.json().message);
+  } catch (error) {
+    
+  }
+  event.preventDefault();
+  form1.reset();
 }
-  
