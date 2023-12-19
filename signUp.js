@@ -1,6 +1,7 @@
 document.getElementById("signUpForm").addEventListener("submit", signIn);
 
 async function signIn(event) {
+  event.preventDefault();
   var form1 = document.getElementById("signUpForm");
   const data = new FormData(form1);
   try {
@@ -8,10 +9,9 @@ async function signIn(event) {
       method: 'POST',
       body: data
     });
-  
-      alert(res.json().message);
+    var d = await res.json();
+      alert(d.message);
   } catch (error) {
-    
   }
   event.preventDefault();
   form1.reset();
